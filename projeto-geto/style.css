@@ -1,0 +1,125 @@
+ 
+ * {
+    margin: 0px;
+    padding: 0px;
+ }
+
+ .box-principal, body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98vw;
+    height: 97vh;
+ }
+
+ body {
+   background: black url(background.jpg) center center no-repeat;
+   background-size: cover;
+ }
+
+ .box-principal {
+    background-color: white;
+    height: auto;
+    padding: 50px;
+    width: 90vw;
+    max-width: 700px;
+    border-radius: 10px;
+ }
+
+ .titulo {
+    font: bold 1.5em Arial;
+    margin: 20px;
+ }
+
+ h2 {
+    padding-top: 15px;
+ }
+
+ form, .box-lista {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 80vw;
+    max-width: 650px;
+ }
+
+ .box-lista {
+    flex-direction: column;
+    row-gap: 15px;
+    width: 85vw;
+    max-width: 680px;
+    height: auto;
+    padding: 10px;
+ }
+
+ input, .button, .row-lista {
+    font: normal 1.1em Arial;
+    border-radius: 10px 0px 0px 10px;
+    outline: none;
+    border: none;
+    border: 2px solid rgba(0, 0, 0, 0.568);
+    height: 48px;
+    width: 65vw;
+    padding-left: 15px;
+    max-width: 520px;
+ }
+
+ .row-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+ }
+
+ .texto {
+    width: 50vw;
+    max-width: 400px;
+ }
+
+.material-icons {
+    font-size: 1.5em;
+}
+
+ .button, #btn-excluir {
+   background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    padding: 0px;
+    width: 55px;
+    height: 48px;
+ }
+
+ .button:hover, #btn-excluir:hover{
+   background-color: red;
+ }
+
+ .border {
+    border: 2px solid rgba(0, 0, 0, 0.568);
+    border-left: none;
+    height: 51.5px;
+ }
+
+ .border:hover {
+   background-color: rgb(231, 231, 231);
+ }
+
+ .no-border, #btn-concluir {
+    border-radius: 0px;
+ }
+
+ .no-border:hover {
+   background-color: green;
+ }
+
+ .invisible {
+   display: none;
+ }
+
+ .done {
+   background-color: rgb(111, 40, 130);
+ }

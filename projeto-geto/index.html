@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+     
+    <title>Projeto Geto</title>
+</head>
+<body>
+    <div class="box-principal">
+        <h1 class="titulo">Salve suas próprias tarefas:</h1>
+
+        <form action="">
+            <input id="input" type="text" placeholder="O que você vai fazer?">
+
+            <button id="btn" class="button border" type="submit">
+                <span id="add" class="material-icons">add</span>
+            </button>
+        </form>
+
+        <h2 class="titulo">Estas são as suas tarefas:</h2>
+
+        <ul class="box-lista">
+            <li class="row-lista invisible">
+                <span class="texto"></span>
+
+                <button id="btn-concluir" class="button no-border">
+                    <span id="concluir" class="material-icons">check</span>
+                </button>
+
+                <button  id="btn-excluir" class="button">
+                      <span id="excluir" class="material-icons">clear</span>
+                </button>
+            </li>
+        </ul>
+    </div> 
+    
+    <script src="interecao.js"></script>
+</body>
+</html>
