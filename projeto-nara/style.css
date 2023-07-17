@@ -7,12 +7,12 @@
 }
 
 .box-principal, body {
-    background-color: white;
+    background-color:  white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 97vh;
+    min-height: 98vh;
     width: 100vw; 
 }
 
