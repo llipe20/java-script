@@ -7,7 +7,7 @@ function verificarNota(nota)
         const alerta = document.querySelector(".invisible");
         alerta.style.display = "flex";
 
-        setInterval (function() {
+        setTimeout (function() {
             alerta.style.display = "none";
         }, 3000);
     }
