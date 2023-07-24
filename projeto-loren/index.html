@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>projeto Loren</title>
 </head>
 <body>
@@ -19,14 +20,14 @@
             <div class="box-escala">
                 <div class="box-number">
                     <label for="celsius">Celsius</label>
-                    <input class="number" type="number" name="celsius" id="celsius" disabled>
+                    <input class="number" type="number" name="celsius" id="celsius" value="0" disabled>
                     <p>ºC</p>
                 </div>
     
                 <div class="box-range">
-                    <p id="start-celsius">#</p>
+                    <p id="start-celsius" class="escala">#</p>
                     <input type="range" class="range" min="-273" max="100">
-                    <p id="end-celsius">#</p>
+                    <p id="end-celsius" class="escala">#</p>
                 </div>
             </div>
     
@@ -34,14 +35,14 @@
             <div class="box-escala">
                 <div class="box-number">
                     <label for="fahrenheit">Fahrenheit</label>
-                    <input class="number" type="number" name="fahrenheit" id="fahrenheit" disabled>
+                    <input class="number" type="number" name="fahrenheit" id="fahrenheit" value="0" disabled>
                     <p>ºF</p>
                 </div>
     
                 <div class="box-range">
-                    <p id="start-fahrenheit">#</p>
+                    <p id="start-fahrenheit" class="escala">#</p>
                     <input type="range" class="range" min="-459" max="212">
-                    <p id="end-fahrenheit">#</p>
+                    <p id="end-fahrenheit" class="escala">#</p>
                 </div>
             </div>
     
@@ -49,21 +50,21 @@
             <div class="box-escala">
                 <div class="box-number">
                     <label for="kelvin">Kelvin</label>
-                    <input class="number" type="number" name="kelvin" id="kelvin" disabled>
+                    <input class="number" type="number" name="kelvin" id="kelvin" value="0" disabled>
                     <p>K</p>
                 </div>
     
                 <div class="box-range">
-                    <p id="start-kelvin">#</p>
+                    <p id="start-kelvin" class="escala">#</p>
                     <input type="range" class="range" min="0" max="373">
-                    <p id="end-kelvin">#</p>
+                    <p id="end-kelvin"  class="escala">#</p>
                 </div>
             </div>
         </main>
         <footer>
-            <p>Desenvolvipor por </p>
-            <a href="https://www.instagram.com/llpe" target="_blank">llpe</a>
+            <a href="https://www.instagram.com/llpe" target="_blank">Desenvolvido por llpe</a>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
