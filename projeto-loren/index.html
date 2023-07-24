@@ -1,0 +1,69 @@
+     <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projeto Loren</title>
+</head>
+<body>
+    <div class="box-principal">
+        <header>
+            <h1>Conversor de temperaturas</h1>
+        </header>
+        <main>
+            <h2>Use o slider da escala de graus Celsius para converter automaticamente</h2>
+    
+            <button id="zerar">Zerar</button>
+    
+            <!-- ESCALA CELSIUS -->
+            <div class="box-escala">
+                <div class="box-number">
+                    <label for="celsius">Celsius</label>
+                    <input class="number" type="number" name="celsius" id="celsius" disabled>
+                    <p>ºC</p>
+                </div>
+    
+                <div class="box-range">
+                    <p id="start-celsius">#</p>
+                    <input type="range" class="range" min="-273" max="100">
+                    <p id="end-celsius">#</p>
+                </div>
+            </div>
+    
+            <!-- ESCALA FAHRENHEIT -->
+            <div class="box-escala">
+                <div class="box-number">
+                    <label for="fahrenheit">Fahrenheit</label>
+                    <input class="number" type="number" name="fahrenheit" id="fahrenheit" disabled>
+                    <p>ºF</p>
+                </div>
+    
+                <div class="box-range">
+                    <p id="start-fahrenheit">#</p>
+                    <input type="range" class="range" min="-459" max="212">
+                    <p id="end-fahrenheit">#</p>
+                </div>
+            </div>
+    
+            <!-- ESCALA KELVIN -->
+            <div class="box-escala">
+                <div class="box-number">
+                    <label for="kelvin">Kelvin</label>
+                    <input class="number" type="number" name="kelvin" id="kelvin" disabled>
+                    <p>K</p>
+                </div>
+    
+                <div class="box-range">
+                    <p id="start-kelvin">#</p>
+                    <input type="range" class="range" min="0" max="373">
+                    <p id="end-kelvin">#</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Desenvolvipor por </p>
+            <a href="https://www.instagram.com/llpe" target="_blank">llpe</a>
+        </footer>
+    </div>
+</body>
+</html>
