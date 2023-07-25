@@ -1,0 +1,104 @@
+
+{
+    "questoes" : [
+        {                   
+            "numero" : 1,
+            "pergunta" : "Em Attack on Titan (Shingeki no Kyojin), os nomes das três muralhas que cercam Paradis são:",
+            "a" : "Maria, Rose, Sina",
+            "b" : "Maria, Azumabito, Rose",
+            "c" : "Sina, Rose, Frizt",
+            "d" : "Sina, Maria, Frizt",
+            "resposta" : "Maria, Rose, Sina"
+        },
+
+        {
+            "numero" : 2,
+            "pergunta" : "Em My Hero Academy (Boku no Hero), como se chama a individualidade de Deku:",
+            "a" : "All for one",
+            "b" : "One for All",
+            "c" : "Chicote negro",
+            "d" : "new order",
+            "resposta" : "One for All"
+        },
+
+        {
+            "numero" : 3,
+            "pergunta" : "Quem derrota a lua supeior três, em Demon Slayer (Kiimetsu no Yaiba):",
+            "a" : "Hashira da névoa (Tokito)",
+            "b" : "Hashira das chamas (Rengoku)",
+            "c" : "Hashira da água (Tomioka) e Tanjiro",
+            "d" : "Inosuke e Kanao",
+            "resposta" : "Hashira da água (Tomioka) e Tanjiro"
+        },
+
+        {
+            "numero" : 4,
+            "pergunta" : "Quem é o vencedor da batalha entre Zeus e Adão, em Record of Ragnarok (Shuumatsu no Valquirie):",
+            "a" : "Adão",
+            "b" : "a luta não existe",
+            "c" : "empate",
+            "d" : "Zeus",
+            "resposta": "Zeus"
+        },
+
+        {
+            "numero" : 5,
+            "pergunta" : "Em Naruto Shippuden, qual clã do Shikamaru?",
+            "a" : "Yeager",
+            "b" : "Aburami",
+            "c" : "Nara",
+            "d" : "Haruno",
+            "resposta": "Nara"
+        },
+
+        {
+            "numero" : 6,
+            "pergunta" : "Em Hunter x Hunter, qual a principal motivação de Gon (protagonista)?",
+            "a" : "ser um Hunter",
+            "b" : "encontrar seu pai",
+            "c" : "defender os fracos",
+            "d" : "ganhar dinheiro",
+            "resposta": "encontrar seu pai"
+        },
+
+        {
+            "numero" : 7,
+            "pergunta" : "O vencedor do torneio do poder, em Dragon Ball Super é:",
+            "a" : "Android 17",
+            "b" : "Friezar",
+            "c" : "Jiren",
+            "d" : "Goku",
+            "resposta": "Android 17"
+        },
+
+        {
+            "numero" : 8,
+            "pergunta" : "Em Super Onze, a clássica e primeira técnica especial utilizado por Endu é:",
+            "a" : "Mão Demoniaca",
+            "b" : "Punho da justiça",
+            "c" : "Mão Invensivel",
+            "d" : "Mão Fantasma",
+            "resposta": "Mão Fantasma"
+        },
+
+        {
+            "numero" : 9,
+            "pergunta" : "Qual desses Pokemon não é do tipo grama:",
+            "a" : "Chikorita",
+            "b" : "Bulbasaur",
+            "c" : "Sceptile",
+            "d" : "Infernape",
+            "resposta": "Infernape"
+        },
+
+        {
+            "numero" : 10,
+            "pergunta" : "Em Jujutsu Kaisen, qual a habilidade especial de Togi Inumaki?",
+            "a" : "Absorver maldições",
+            "b" : "Fala amaldiçoada",
+            "c" : "Teletransporte",
+            "d" : "Mugen",
+            "resposta": "Fala amaldiçoada"
+        }
+    ]
+}
