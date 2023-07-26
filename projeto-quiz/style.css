@@ -1,0 +1,132 @@
+
+@charset "UTF-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body, .box-principal {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    width: 92vw;
+    height: 92vh;
+}
+
+.box-principal {
+    width: 85vw;
+    max-width: 650px;
+    height: auto;
+    margin: 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
+    width: 85vw;
+    max-width: 600px;
+    margin: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+main {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.371);
+    height: auto;
+    width: 85vw;
+    max-width: 620px;
+    padding: 10px;
+    margin: 5px;
+}
+
+#btn-start {
+    font-size: 1.25em;
+    height: 50px;
+    width: 20vw;
+    max-width: 150px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.481);
+    margin: 10px;
+}
+
+.box-pergunta {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    width: 80vw;
+    padding: 15px 0px;
+    max-width: 600px;
+}
+
+p#pergunta {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    width: 80vw;
+    max-width: 600px;
+}
+
+li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: antiquewhite;
+    height: 50px;
+    width: 70vw;
+    max-width: 500px;
+    margin: 7px;
+    padding-left: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.507);
+    border: 1.5px solid blue;
+}
+
+li:hover, #btn-start:hover {
+    background-color: blue;
+    color: white;
+}
+
+#box-totQuestao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 80vw;
+    max-width: 500px;
+    padding: 10px;
+    margin: 15px;
+}
+
+p#total-questao {
+    color: blue;
+}
+
+.invisible {
+    display: none;
+}
