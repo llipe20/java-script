@@ -16,7 +16,7 @@ var totalAcerto = 0; // placar de pontos;
 function trazerDados(v) 
 {
     var i = v -1;
-    
+
     console.log("Valor de i:", i );
 
     const url = 'dados.json';
@@ -44,6 +44,25 @@ function trazerDados(v)
         })    
 }
 
+function fimJogo(pontos)
+{
+    const sub = document.querySelector("#sub-titulo");
+    sub.classList.remove("invisible");
+    sub.textContent = "Você acertou " + pontos;
+}
+
+// Retirar fundo do main de erro e acerto;
+function retirar()
+{
+    const main = document.querySelector("main");
+    const questao = document.querySelector("#total-questao");
+    const pergunta = document.querySelector("#pergunta");
+
+    pergunta.style.color = "black";
+    questao.style.color = "black";
+    main.style.backgroundColor = "white";
+}
+
 // Verifica se acertou ou errou a questão;
 function verificarAcerto(i, evento)
 {
@@ -53,12 +72,22 @@ function verificarAcerto(i, evento)
     if (correta == alternativa) {
                    // Se acerta, ficar verde o fundo;
         const main = document.querySelector("main");
+        const questao = document.querySelector("#total-questao");
+        const pergunta = document.querySelector("#pergunta");
+        pergunta.style.color = "white";
+        questao.style.color = "white";
+
         main.style.backgroundColor = "green";
         totalAcerto += 1;
     } 
     else 
     {
         const main = document.querySelector("main");
+        const questao = document.querySelector("#total-questao");
+        const pergunta = document.querySelector("#pergunta");
+        pergunta.style.color = "white";
+        questao.style.color = "white";
+
         main.style.backgroundColor = "red";
     }
 
@@ -72,13 +101,18 @@ function verificarAcerto(i, evento)
         {
             fimJogo();
         }
-    }, 1000);
+
+        retirar(totalAcerto);
+
+    }, 500);
 }
 
 
 // INICIO DO PROGRAMA;
 function startQuiz() {
     const main = document.getElementById("main");
+    const sub = document.querySelector("#sub-titulo");
+    sub.classList.add("invisible");
     main.classList.remove("invisible");
     start.classList.add("invisible");
 

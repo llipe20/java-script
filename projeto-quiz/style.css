@@ -35,10 +35,14 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 100px;
+    height: auto;
     width: 85vw;
     max-width: 600px;
     margin: 10px;
+}
+
+h1, #sub-titulo {
+    margin: 7px;
 }
 
 p {
