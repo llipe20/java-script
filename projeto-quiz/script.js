@@ -1,13 +1,18 @@
+// ELEMENTOS MANIPULAVEIS;
 
-var start = document.getElementById("btn-start");
-var questao = document.getElementById("total-questao");
-var pergunta = document.getElementById("pergunta");
+var start = document.getElementById("btn-start"); // botão inicial;
+var questao = document.getElementById("total-questao"); // total questões;
+var pergunta = document.getElementById("pergunta"); // pergunta;
+var resposta = document.getElementById("resposta"); // resposta correta;
+var Qatual = document.getElementById("questao"); // questão atual;
+var li = document.querySelector("alternativa"); // todas as alternativas;
 var a = document.getElementById("a");
 var b = document.getElementById("b");
 var c = document.getElementById("c");
 var d = document.getElementById("d");
-var totalAcerto = 0;
+var totalAcerto = 0; // placar de pontos;
 
+// 1. Trazer dados do json para variáveis;
 function trazerDados(i) {
     const url = 'dados.json';
     fetch(url)
@@ -25,6 +30,8 @@ function trazerDados(i) {
 
             // Add perguntas e alternativas;
             pergunta.textContent = dados.questoes[i].pergunta;
+            Qatual.value = atualQuestao;
+            resposta.value = dados.questoes[i].resposta;
             a.textContent = dados.questoes[i].a;
             b.textContent = dados.questoes[i].b;
             c.textContent = dados.questoes[i].c;
@@ -32,43 +39,44 @@ function trazerDados(i) {
         })    
 }
 
-verificarAcerto(i,v)
+// Verifica se acertou ou errou a questão;
+verificarAcerto(i, evento)
 {
-    let resposta = dados.questoes[i].resposta;
-    let alternativa = document.getElementById(v).value;
+    let correta = resposta.value;
+    let alternativa = evento.target.textContent;
 
-    if (resposta == alternativa) {
-        setTimeout(function() {
+    if (correta == alternativa) {
+        setTimeout(function()           // Se acerta, ficar verde o fundo;
+        {
             const main = document.querySelector("main");
             main.style.backgroundColor = "green";
         }, 1500);
 
         totalAcerto += 1;
-    } else {
+    } 
+    else 
+    {
         setTimeout(function() {
             const main = document.querySelector("main");
             main.style.backgroundColor = "red";
         }, 1500);
     }
 
-    setTimeout(function() {
-        promixaQuestao(i);
+    setTimeout(function()  // Mudar de questão;
+    {
+        if(i < 10)
+        {
+            trazerDados(i + 1);
+        }
+        else
+        {
+            fimJogo();
+        }
     }, 1500);
 }
 
- // Função para passar para próxima questão;
-promixaQuestao(i)
-{
-    if (i == 0)
-    {
-        return 0;
-    }
-    else
-    {
-        return i + 1;
-    }
-}
 
+// INICIO DO PROGRAMA;
 function startQuiz() {
     const main = document.querySelector("main");
     main.classList.remove("invisible");
@@ -77,6 +85,13 @@ function startQuiz() {
     trazerDados(0);
 }
 
+
+// EVENTO DE INICIAR QUIZ;
 start.addEventListener("click", function() {
     startQuiz();
 });
+
+// EVENTO DAS ALTERNATIVAS;
+li.addEventListener("click", function(event) {
+    verificarAcerto(Qatual.value,event);
+})
