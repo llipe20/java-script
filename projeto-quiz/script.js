@@ -46,6 +46,7 @@ function trazerDados(v)
 
 function fimJogo(pontos)
 {
+    // Trazer o subtitulo de volta;
     const sub = document.querySelector("#sub-titulo");
     sub.classList.remove("invisible");
 
