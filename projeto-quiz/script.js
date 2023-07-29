@@ -48,7 +48,30 @@ function fimJogo(pontos)
 {
     const sub = document.querySelector("#sub-titulo");
     sub.classList.remove("invisible");
-    sub.textContent = "Você acertou " + pontos;
+
+    // Mostrar a quantidade de acertos;
+    switch (pontos)
+    {
+        case 0:
+            sub.textContent = "Você acertou nada! Parabéns!";
+        break;
+
+        case 1:
+            sub.textContent = "Você acertou " + pontos + " questão";
+        break;
+        
+        default:
+            sub.textContent = "Você acertou " + pontos + " questões";
+    }
+    
+    // Tornando as questões invisiveis;
+    const main = document.querySelector("main");
+    main.classList.add("invisible");
+
+    // Botão de iniciar quiz novamente;
+    start.classList.remove("invisible");
+    start.textContent = "Repetir";
+
 }
 
 // Retirar fundo do main de erro e acerto;
@@ -78,7 +101,7 @@ function verificarAcerto(i, evento)
         questao.style.color = "white";
 
         main.style.backgroundColor = "green";
-        totalAcerto += 1;
+        totalAcerto = (totalAcerto + 1);
     } 
     else 
     {
@@ -99,12 +122,12 @@ function verificarAcerto(i, evento)
         }
         else
         {
-            fimJogo();
+            fimJogo(totalAcerto);
         }
 
-        retirar(totalAcerto);
+        retirar();
 
-    }, 500);
+    }, 400);
 }
 
 
