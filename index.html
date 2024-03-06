@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro de task novos cadastros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <style>
+        .bg {
+            background-image: url('https://i.ibb.co/Q61PH8V/fundo-perfeito.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex flex-col justify-center items-center w-screen h-screen bg">
+        <div class="flex flex-col justify-center items-center gap-6 p-5 w-2/5 h-96 bg-white shadow rounded-lg">
+            <h1 class="text-2xl font-bold text-center mb-5">"Se sua estrela não brilha, não tente apagar a minha"</h1>
+            <div class="flex justify-start itmes-center w-full h-auto gap-2">
+                <label for="task" class="font-bold">Arquivo de taks aqui:</label>
+                <input type="file" id="task" name="taks" accept=".xlsx,.xls" class="flex justify-center items-center gap-2 w-auto h-10 rounded-lg p-1"/>
+            </div>
+            <div class="flex justify-start itmes-center w-full h-16 gap-2">
+                <label for="pdv" class="font-bold">Arquivo de novos PDVs:</label>
+                <input type="file" id="pdv" name="pdv" accept=".xlsx,.xls" class="flex justify-center items-center gap-2 w-auto h-10 rounded-lg p-1"/>
+            </div>
+            <button onclick="processData()" class="w-auto shadow bg-green-600 text-white p-2 border-black scale-95 hover:scale-100 rounded-lg">Filtrar e baixar</button>
+        </div>
+    </div>
+    
+    
+    <script>
+        // Converte josn em excel e faz donwload
+        const Neymar = (base) => {
+            const ws = XLSX.utils.aoa_to_sheet(base);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Filtered Tasks');
+            const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+
+            const s2ab = (s) => {
+                const buf = new ArrayBuffer(s.length);
+                const view = new Uint8Array(buf);
+                for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+                return buf;
+            }
+            saveAs(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), 'task_novos_cadastros.xlsx');
+        }
+
+        // Pega os dados planilha de tasks e pdv
+        const processData = () => {
+            const taskFile = document.getElementById('task').files[0];
+            const pdvFile = document.getElementById('pdv').files[0];
+
+            if (!taskFile || !pdvFile) {
+                alert('Por favor, selecione as duas planilhas Excel.');
+                return;
+            }
+
+            const taskReader = new FileReader();
+            taskReader.onload = function(event) {
+                const taskWorkbook = XLSX.read(event.target.result, { type: 'binary' });
+                const taskSheetName = taskWorkbook.SheetNames[0];
+                const taskSheet = taskWorkbook.Sheets[taskSheetName];
+                const taskData = XLSX.utils.sheet_to_json(taskSheet, { header: 1 });
+
+                // Ler a planilha de PDV
+                const pdvReader = new FileReader();
+                pdvReader.onload = function(event) {
+                    const pdvWorkbook = XLSX.read(event.target.result, { type: 'binary' });
+                    const pdvSheetName = pdvWorkbook.SheetNames[0];
+                    const pdvSheet = pdvWorkbook.Sheets[pdvSheetName];
+                    const pdvData = XLSX.utils.sheet_to_json(pdvSheet, { header: 1 });
+
+                    // Obter os códigos de PDV
+                    const pdvCodes = pdvData.map(row => row[2]); 
+
+                    // Filtrar as tarefas que contenham o código do PDV
+                    let filteredTasks = [taskData[0]]
+                    pdvCodes.forEach(pdv => {
+                        let res = taskData.filter(row => pdv == row[5]); 
+                        filteredTasks.push(...res)
+                    })
+                    console.log(filteredTasks)
+                    Neymar(filteredTasks)
+                };
+
+                pdvReader.readAsBinaryString(pdvFile)
+            };
+
+            taskReader.readAsBinaryString(taskFile)
+        }
+    </script>
+</body>
+</html>
